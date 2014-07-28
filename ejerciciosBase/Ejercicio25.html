@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Ejercicio 25</title>
+	<!-- Formulario que pide el sistema operativo que está utilizando el usuario (Mac, Linux o Windows) mediante un cuadro de selección -->
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					var elemento= this;
+					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+				});
+			return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<form id="formulario" name="formulario">
+		<strong>Por favor, indique qu&eacute S.O. utiliza:</strong><br>
+		<select required>
+			<option value="mac">Mac</option>
+			<option value="linux">Linux</option>
+			<option value="windows">Windows</option>
+		</select> 
+		<input id="enviar" type="submit" value="Enviar">	
+	</form>
+	
+</body>
+</html>

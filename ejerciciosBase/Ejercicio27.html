@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Ejercicio 27</title>
+	<!-- Formulario que muestra un elemento de selección con los nombres de los meses del año y los agrupa por estaciones -->
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					var elemento= this;
+					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+				});
+			return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<form id="formulario" name="formulario">
+		<select>
+			<optgroup label="Primavera">
+				<option value="marzo">Marzo</option>
+				<option value="abril">Abril</option>
+				<option value="mayo">Mayo</option>
+				<option value="junio">Junio</option>
+			</option>
+			<optgroup label="Verano">
+				<option value="junio">Junio</option>
+				<option value="julio">Julio</option>
+				<option value="agosto">Agosto</option>
+				<option value="septiembre">Septiembre</option>
+			</option>
+			<optgroup label="Otoño">
+				<option value="septiembre">Septiembre</option>
+				<option value="octubre">Octubre</option>
+				<option value="noviembre">Noviembre</option>
+				<option value="diciembre">Diciembre</option>
+			</option>
+			<optgroup label="Invierno">
+				<option value="diciembre">Diciembre</option>
+				<option value="enero">Enero</option>
+				<option value="febrero">Febrero</option>
+				<option value="marzo">Marzo</option>
+			</option>
+
+		</select>
+		<input id="enviar" type="submit" value="Enviar">	
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Ejercicio 28</title>
+	<!-- Formulario que muestra una pregunta y tres respuestas posibles, al lado de cada respuesta disponer un botón creado con el elemento input.
+		 Otro formulario, separado por una línea horizontal, en el que se muestra otra pregunta y tres respuestas, 
+		 disponiendo un botón submit (con un valor diferente) para cada una de ellas 
+	-->
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					var elemento= this;
+					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+				});
+			return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<strong>¿Qué dispositivo utiliza habitualmente?</strong>
+	<form id="formulario1" name="formulario1">
+		<ul>
+			<li>PC <input name="pc" type="submit" value="enviar"></li>
+			<li>Tablet <input name="tablet" type="submit" value="enviar"></li>
+			<li>Smartphone <input name="smartphone" type="submit" value="enviar"></li>
+		</ul>	
+	</form>
+
+	<hr>
+	<strong>¿Qué sistema operativo utiliza habitualmente?</strong>
+	<form id="formulario2" name="formulario2">
+		<ul>
+			<li>Mac <button name="mac" type="submit" value="mac">enviar</li>
+			<li>Linux <button name="linux" type="submit" value="linux">enviar</li>
+			<li>Windows <button name="windows" type="submit" value="windows">enviar</li>
+		</ul>	
+	</form>
+	
+	
+</body>
+</html>

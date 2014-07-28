@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Ejercicio 26</title>
+	<!-- Formulario que muestra en un elemento de selección un conjunto de lenguajes de programación
+		 y permite seleccionar varios de ellos, mostrando un texto antes de dicho campo que indiqua 
+		 que para seleccionar varios elementos es necesario presionar la tecla Ctrl -->
+		 
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					//var elemento= this;
+					//if (elemento.type != 'submit')
+					//	alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+					
+					var foo = []; 
+					$('#ssoo :selected').each(function(i, selected){ 
+							foo[i] = $(selected).text(); 
+							alert(foo[i]); 
+					});
+				});
+			return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<form id="formulario" name="formulario">
+		<strong>Por favor, indique qu&eacute S.O. utiliza:</strong><br>
+		<h5>(Presione la tecla Ctrl para seleccionar m&aacutes de una opci&oacuten)</h5>
+		<select id="ssoo" name="ssoo" required multiple size="3">
+			<option value="mac">Mac</option>
+			<option value="linux">Linux</option>
+			<option value="windows">Windows</option>
+		</select> 
+		<input id="enviar" type="submit" value="Enviar">	
+	</form>
+	
+</body>
+</html>

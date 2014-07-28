@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Ejercicio 21</title>
+	<!-- Formulario que solicita un nombre de usuario y su contraseña -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					var elemento= this;
+					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+				});
+			return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<form id="formulario" name="formulario">
+		<label for="nombre_usuario">Usuario</label>
+		<input id="nombre_usuario" type="text" autofocus><br>
+		<label for="password">Contrase&ntildea</label>
+		<input id="password" type="password"><br>
+		<input id="enviar" type="submit" value="Enviar">
+	</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Ejemplo Formulario Javascript</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					var elemento= this;
+					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+				});
+			return fasle;
+			});
+		});
+	</script>
+</head>
+<body>
+	<form id="formulario" name="formulario">
+		<input type="text" id="elemento1" value="valor1">
+		<input id="enviar" type="submit" value="Enviar">
+	</form>
+</body>
+</html>
