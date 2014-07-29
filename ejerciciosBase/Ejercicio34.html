@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Ejercicio 34</title>
+	<!-- Matriz 4x4 de elementos de tipo text. El flujo de los elementos (el orden según las tabulaciones) hace una espiral 
+		 Los 4 elementos interiores están deshabilitados y los exteriores son de solo lectura -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					var elemento= this;
+					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+				});
+			return false;
+			});
+		});
+	</script>
+	<style>
+		input { width: 30px;
+		}
+	</style>
+</head>
+<body>
+	<form id="formulario" name="formulario">
+		<input type="text" name="1"  autofocus tabindex="1" readonly>
+		<input type="text" name="2" tabindex="2" readonly>
+		<input type="text" name="3" tabindex="3" readonly>
+		<input type="text" name="4" tabindex="4" readonly>
+		<br>
+		<input type="text" name="12" tabindex="12" readonly>
+		<input type="text" name="13" tabindex="13" disabled>
+		<input type="text" name="14" tabindex="14" disabled>
+		<input type="text" name="5" tabindex="5" readonly>
+		<br>
+		<input type="text" name="11" tabindex="11" readonly>
+		<input type="text" name="16" tabindex="16" disabled>
+		<input type="text" name="15" tabindex="15" disabled>
+		<input type="text" name="6" tabindex="6" readonly>
+		<br>
+		<input type="text" name="º10" tabindex="10" readonly>
+		<input type="text" name="9" tabindex="9" readonly>
+		<input type="text" name="8" tabindex="8" readonly>
+		<input type="text" name="7" tabindex="7" readonly>
+		<input id="enviar" type="submit" form="formulario" value="Ok">
+	</form>
+	
+</body>
+</html>

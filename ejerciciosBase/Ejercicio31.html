@@ -1,0 +1,62 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Ejercicio 31</title>
+	<!-- Formulario que permite solicitar tres cursos de formación mediante tres elementos de selección --> 
+		
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					var elemento= this;
+					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+				});
+			return false;
+			});
+		});
+	</script>
+	<style>
+		fieldset {width:180px};
+	</style>	
+</head>
+<body>
+	<form id="formulario" name="formulario">
+		<fieldset>
+		<legend>Cursos de formación</legend>
+		Curso 1:
+		<select id="curso1" name="curso1">
+			<option value="mac">Mac</option>
+			<option value="linux">Linux</option>
+			<option value="windows">Windows</option>
+		</select>
+		<br>
+		Curso 2:	
+		<select id="curso2" name="curso2">
+			<option value="mac">Mac</option>
+			<option value="linux">Linux</option>
+			<option value="windows">Windows</option>
+		</select>
+		<br>
+		Curso 3:
+		<select id="curso3" name="curso3">
+			<option value="mac">Mac</option>
+			<option value="linux">Linux</option>
+			<option value="windows">Windows</option>
+		</select>
+		<br>
+		</fieldset>
+		<br>
+		<fieldset>
+		<legend>Usuario</legend>
+			<label for="nombre">Nombre</label>
+			<input id="nombre" type="text" style="width:170px"><br>
+			<label for="dni">D.N.I.</label><br>
+			<input id="dni" type="text" maxlength="9" style="width:75px"><br>
+		</fieldset>
+		<br>
+		<input id="enviar" type="submit" value="Enviar">	
+	</form>
+	
+</body>
+</html>

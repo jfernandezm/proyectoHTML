@@ -10,12 +10,13 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript">
 		$( document ).ready(function() {
-			$('#formulario').submit(function(){
-				$('#formulario').find(':input').each(function() {
-					var elemento= this;
-					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
-				});
-			return false;
+			$('input:submit').click(function(){
+				//alert('submit');
+				alert ( this.name );
+			});
+			
+			$('input:button').click(function(){
+				alert ( this.name );
 			});
 		});
 	</script>
@@ -24,9 +25,9 @@
 	<strong>¿Qué dispositivo utiliza habitualmente?</strong>
 	<form id="formulario1" name="formulario1">
 		<ul>
-			<li>PC <input name="pc" type="submit" value="enviar"></li>
-			<li>Tablet <input name="tablet" type="submit" value="enviar"></li>
-			<li>Smartphone <input name="smartphone" type="submit" value="enviar"></li>
+			<li>PC <input name="pc" type="submit" value="Enviar"></li>
+			<li>Tablet <input name="tablet" type="submit" value="Enviar"></li>
+			<li>Smartphone <input name="smartphone" type="submit" value="Enviar"></li>
 		</ul>	
 	</form>
 
@@ -34,9 +35,9 @@
 	<strong>¿Qué sistema operativo utiliza habitualmente?</strong>
 	<form id="formulario2" name="formulario2">
 		<ul>
-			<li>Mac <button name="mac" type="submit" value="mac">enviar</li>
-			<li>Linux <button name="linux" type="submit" value="linux">enviar</li>
-			<li>Windows <button name="windows" type="submit" value="windows">enviar</li>
+			<li>Mac <input name="mac" type="button" value="Enviar"></li>
+			<li>Linux <input name="linux" type="button" value="Enviar"></li>
+			<li>Windows <input name="windows" type="button" value="Enviar" title="Enviar"></li>
 		</ul>	
 	</form>
 	

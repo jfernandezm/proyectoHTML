@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Ejercicio 29</title>
+	<!-- Formulario que permite seleccionar un fichero mediante un elemento input y contiene un segundo campo, oculto, 
+		 que almacena una hora cualquiera --> 
+		
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#formulario').submit(function(){
+				$('#formulario').find(':input').each(function() {
+					var elemento= this;
+					alert("id="+ elemento.id + "\ntype=" + elemento.type + "\nvalue=" + elemento.value); 
+				});
+			return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<form id="formulario" name="formulario">
+		Seleccione un fichero: <input type="file" name="file">
+		<input type="hidden" name="hora" value="12:25">
+		<input id="enviar" type="submit" value="Enviar">	
+	</form>
+	
+</body>
+</html>
